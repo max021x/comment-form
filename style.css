@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f2f2f2f2;
+}
+.container{
+    max-width: 1050px;
+    width: 100%;
+    box-shadow: 0 15px 20px rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 12px;
+    margin: 0 20px;
+    overflow: hidden;
+}
+.container .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 20px;
+}
+.container .content .image-box{
+    width: 55%;
+}
+ .content .image-box img{
+   width: 100%;
+   height: 60%;
+}
+.content .topic{
+    color: rgb(21, 0, 255);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.container .content form{
+    width: 40%;
+    margin-right: 20px;
+}
+.container .content form .input-box{
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin: 10px 0;
+}
+.container .content form .input-box input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 1px solid;
+    border-radius: 12px;
+    outline: 0;    
+    padding-left: 16px;
+    font-size: 1.2rem;
+}
+.container .content form .input-box label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 18px;
+    transition: all 0.4s;
+    pointer-events: none;
+}
+.content form .input-box input:focus ~ label,
+.content form .input-box input:valid ~ label{
+    top: 0%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    color: rgb(0, 47, 255);
+}
+.content form .message-box{
+    min-height: 100px;
+    position: relative;
+}
+.content form .message-box textarea{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    padding-left: 18px;
+    padding-top: 20px;
+}
+.content form .message-box label{
+    position: absolute;
+    left: 18px;
+    top: 5px;
+    transition: all 0.4s;
+}
+.content form .message-box textarea:focus~label{
+   top: 0;
+   transform: translateY(-50%);
+   color: rgb(0, 47, 255);
+   background-color: #fff;
+}
+.content form .input-box input[type='submit']{
+  padding-left: 0;
+  background-color: rgba(0, 47, 255, 0.847);
+  color: #fff;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.content form .input-box input[type='submit']:hover{
+    background-color: rgb(0, 47, 255);
+}
+.content form .input-box input[type='submit']:active{
+   transform: scale(0.45);
+}
+@media (max-width:100px){
+ .content .image-box {
+    max-width: 70%;
+
+ }
+ .content{
+    padding: 10px 0;
+ }
+}
+
+
+
+
+@media (max-width:900px){
+   .container .content .image-box{
+        display: none;
+    }
+    .container .content form{
+        width: 100%;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width:390px){
+    .container{
+        max-width: 2000px;
+    }
+    .container .content form{
+      width: 100%;
+      height: 100%;
+    }
+    .container .content form .input-box{
+         height: 50px;
+         width: 200px;
+    }
+    .container .content form .input-box input{
+        padding-left: 10px;     
+        font-size: 0.9rem;
+   }
+    .container .content form .input-box label{
+        font-size: 0.8rem;
+    }
+    .container .content form .message-box label{
+        font-size: 0.8rem;
+    }
+}
